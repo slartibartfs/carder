@@ -56,25 +56,21 @@
 }
 
 
--(void) setCardShading:(NSString *)cardShading
+-(void) setCardShading:(NSNumber *)cardShading
 {
     if ( [[SetPlayingCard validCardShadings] containsObject:cardShading]) {
         _cardShading = cardShading;
     }
 }
 
-- (NSString *) cardShading
+- (NSNumber *) cardShading
 {
-    return _cardShading ? _cardShading : @"?";
+    return _cardShading ? _cardShading : @-1;
+    
 }
 
 
-+ (NSArray *)cardNumberStrings
-{
-    return @[@"?",@"one",@"two",@"three"];
-}
-
-+ (NSUInteger)maxCardNumbers { return [self cardNumberStrings].count-1; }
++ (NSUInteger)maxCardNumbers { return [self validCardNumbers].count; }
 
 - (void)setCardNumber:(NSUInteger)cardNumber
 {
@@ -83,7 +79,11 @@
     }
 }
 
-
++ (NSArray *)validCardNumbers
+{
+    return @[@1,@2,@3];
+    
+}
 
 + (NSArray *)validCardColors
 {
@@ -98,7 +98,7 @@
 
 + (NSArray *) validCardShadings
 {
-    return @[@"solid", @"striped", @"open"];
+    return @[@1,@2,@3];
 }
 
 @end

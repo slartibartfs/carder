@@ -17,7 +17,7 @@
     if (self) {
         for (NSNumber *cardColor in [SetPlayingCard validCardColors]) {
             for (NSNumber *cardSymbol in [SetPlayingCard validCardSymbols]) {
-                for (NSString *cardShading in [SetPlayingCard validCardShadings]) {
+                for (NSNumber *cardShading in [SetPlayingCard validCardShadings]) {
                     for (NSUInteger cardNumber=1; cardNumber <= [SetPlayingCard maxCardNumbers]; cardNumber++) {
                         SetPlayingCard *card = [[SetPlayingCard alloc] init];
                         card.cardColor = cardColor;

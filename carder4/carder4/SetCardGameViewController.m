@@ -34,7 +34,10 @@
     
 }
 
-- (NSString *)getSymbol: (NSNumber *)cardSymbol numberOfSymbols: (NSUInteger)cardNumber
+- (NSAttributedString *)getSymbol: (NSNumber *)cardSymbol
+              withNumberOfSymbols: (NSUInteger)cardNumber
+                        withColor: (NSNumber *)cardColor
+
 {
     NSDictionary *cardSymbols = @{@1: @"●", @2: @"▲", @3: @"■"};
     NSMutableString *result = [[NSMutableString alloc] init];
@@ -42,7 +45,24 @@
     {
         [result appendString:cardSymbols[cardSymbol]];
     }
-    return result;
+    NSMutableAttributedString *cardTitle = [[NSMutableAttributedString alloc] initWithString:result];
+    
+    NSDictionary *cardColors = @{@1:[UIColor greenColor], @2:[UIColor blueColor], @3:[UIColor redColor]};
+    NSRange range = [[cardTitle string] rangeOfString:[cardTitle string]];
+    [cardTitle addAttribute:NSForegroundColorAttributeName value:cardColors[cardColor] range:range];
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    return cardTitle;
+                                     
 }
 
 -(void)updateUI
@@ -52,27 +72,14 @@
     {
         SetPlayingCard *card = (SetPlayingCard *)[self.gameset cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
     
-    NSLog(@" Symbol...: %@", [self getSymbol:card.cardSymbol numberOfSymbols:card.cardNumber]);
+        //NSLog(@" Symbol...: %@", [self getSymbol:card.cardSymbol numberOfSymbols:card.cardNumber]);
     
+    [cardButton setAttributedTitle:[self getSymbol:card.cardSymbol withNumberOfSymbols:card.cardNumber withColor:card.cardColor] forState:UIControlStateNormal];
     
-    
-     {
         
-         //[cardButton setAttributedTitle:self.cardContents forState:<#(UIControlState)#> forState:UIControlStateNormal];
-         // [cardButton setTitle:@"●" forState:UIControlStateSelected];
-        
-         //[cardButton setAttributedTitle: cardContents forState:UIControlStateNormal];
 
-        
-        }
-        //if ([card.cardSymbol compare:@"diamond"]) NSLog(@"▲");
-        //if ([card.cardSymbol compare:@"squiggle"]) NSLog(@"■");
-    
-
-
-    
-        [cardButton setTitle:[self getSymbol:card.cardSymbol numberOfSymbols:card.cardNumber] forState:UIControlStateSelected];
-        [cardButton setTitle:[self getSymbol:card.cardSymbol numberOfSymbols:card.cardNumber] forState:UIControlStateNormal];
+        //[cardButton setTitle:[self getSymbol:card.cardSymbol numberOfSymbols:card.cardNumber] forState:UIControlStateSelected];
+        //[cardButton setTitle:[self getSymbol:card.cardSymbol numberOfSymbols:card.cardNumber] forState:UIControlStateNormal];
     
 
         // [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];

@@ -16,7 +16,6 @@
 		9F256A7716D6B10100600E27 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F256A7616D6B10100600E27 /* Default.png */; };
 		9F256A7916D6B10100600E27 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F256A7816D6B10100600E27 /* Default@2x.png */; };
 		9F256A7B16D6B10100600E27 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F256A7A16D6B10100600E27 /* Default-568h@2x.png */; };
-		9F256A7E16D6B10100600E27 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F256A7C16D6B10100600E27 /* MainStoryboard.storyboard */; };
 		9F256A8916D6B10100600E27 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F256A8816D6B10100600E27 /* SenTestingKit.framework */; };
 		9F256A8A16D6B10100600E27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F256A6416D6B10100600E27 /* UIKit.framework */; };
 		9F256A8B16D6B10100600E27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F256A6616D6B10100600E27 /* Foundation.framework */; };
@@ -78,7 +77,6 @@
 		9F256A7616D6B10100600E27 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9F256A7816D6B10100600E27 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9F256A7A16D6B10100600E27 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		9F256A7D16D6B10100600E27 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9F256A8716D6B10100600E27 /* carder4Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carder4Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F256A8816D6B10100600E27 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9F256A9016D6B10100600E27 /* carder4Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "carder4Tests-Info.plist"; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 				9F256AA516D6B22E00600E27 /* SetCardGameViewController.m */,
 				9F256A7316D6B10100600E27 /* AppDelegate.h */,
 				9F256A7416D6B10100600E27 /* AppDelegate.m */,
-				9F256A7C16D6B10100600E27 /* MainStoryboard.storyboard */,
 				9F256A6B16D6B10100600E27 /* Supporting Files */,
 			);
 			path = carder4;
@@ -320,7 +317,6 @@
 				9F256A7716D6B10100600E27 /* Default.png in Resources */,
 				9F256A7916D6B10100600E27 /* Default@2x.png in Resources */,
 				9F256A7B16D6B10100600E27 /* Default-568h@2x.png in Resources */,
-				9F256A7E16D6B10100600E27 /* MainStoryboard.storyboard in Resources */,
 				9F256AA816D6B22E00600E27 /* MainStoryboard.storyboard in Resources */,
 				9F256AD216D6B27900600E27 /* setgameicon.png in Resources */,
 				9F256AD416D6B27900600E27 /* cardgameicon.png in Resources */,
@@ -415,14 +411,6 @@
 				9F256A6E16D6B10100600E27 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		9F256A7C16D6B10100600E27 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F256A7D16D6B10100600E27 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		9F256A9116D6B10100600E27 /* InfoPlist.strings */ = {
@@ -567,6 +555,7 @@
 				9F256A9B16D6B10100600E27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F256A9C16D6B10100600E27 /* Build configuration list for PBXNativeTarget "carder4Tests" */ = {
 			isa = XCConfigurationList;
@@ -575,6 +564,7 @@
 				9F256A9E16D6B10100600E27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

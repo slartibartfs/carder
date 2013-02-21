@@ -12,10 +12,10 @@
 
 @property (strong, nonatomic) NSNumber *cardColor;
 @property (strong, nonatomic) NSNumber *cardSymbol;
-@property (strong, nonatomic) NSString *cardShading;
+@property (strong, nonatomic) NSNumber *cardShading;
 @property (nonatomic) NSUInteger cardNumber;
 
-+ (NSArray *)cardNumberStrings;
++ (NSArray *)validCardNumbers;
 + (NSArray *)validCardColors;
 + (NSArray *)validCardSymbols;
 + (NSArray *)validCardShadings;
