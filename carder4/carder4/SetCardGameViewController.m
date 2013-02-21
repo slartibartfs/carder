@@ -37,29 +37,24 @@
 - (NSAttributedString *)getSymbol: (NSNumber *)cardSymbol
               withNumberOfSymbols: (NSUInteger)cardNumber
                         withColor: (NSNumber *)cardColor
+                       andShading: (NSNumber *)cardShading
 
 {
     NSDictionary *cardSymbols = @{@1: @"●", @2: @"▲", @3: @"■"};
+    NSDictionary *cardColors = @{@1:[UIColor greenColor], @2:[UIColor blueColor], @3:[UIColor redColor]};
+    NSDictionary *cardShadings = @{@1:@1.0, @2:@0.6, @3:@0.3};
+
     NSMutableString *result = [[NSMutableString alloc] init];
     for (int i=1; i<=cardNumber;i++)
     {
         [result appendString:cardSymbols[cardSymbol]];
     }
+    
     NSMutableAttributedString *cardTitle = [[NSMutableAttributedString alloc] initWithString:result];
-    
-    NSDictionary *cardColors = @{@1:[UIColor greenColor], @2:[UIColor blueColor], @3:[UIColor redColor]};
     NSRange range = [[cardTitle string] rangeOfString:[cardTitle string]];
-    [cardTitle addAttribute:NSForegroundColorAttributeName value:cardColors[cardColor] range:range];
-    
-    
-    
-    
-    
-    
-    
-    
 
-    
+        
+    [cardTitle addAttribute:NSForegroundColorAttributeName value:[cardColors[cardColor] colorWithAlphaComponent:[cardShadings[cardShading] floatValue]] range:range];
     
     return cardTitle;
                                      
@@ -74,22 +69,21 @@
     
         //NSLog(@" Symbol...: %@", [self getSymbol:card.cardSymbol numberOfSymbols:card.cardNumber]);
     
-    [cardButton setAttributedTitle:[self getSymbol:card.cardSymbol withNumberOfSymbols:card.cardNumber withColor:card.cardColor] forState:UIControlStateNormal];
+        [cardButton setAttributedTitle:[self getSymbol:card.cardSymbol
+                                   withNumberOfSymbols:card.cardNumber
+                                             withColor:card.cardColor
+                                            andShading:card.cardShading] forState:UIControlStateNormal];
     
         
 
-        //[cardButton setTitle:[self getSymbol:card.cardSymbol numberOfSymbols:card.cardNumber] forState:UIControlStateSelected];
-        //[cardButton setTitle:[self getSymbol:card.cardSymbol numberOfSymbols:card.cardNumber] forState:UIControlStateNormal];
-    
-
-        // [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         
-        cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
-        cardButton.alpha = card.isFaceUp ? 0.3 : 1.0;
+        cardButton.alpha = card.isUnplayable ? 0.1 : 1.0;
+        cardButton.backgroundColor = card.isFaceUp ? [UIColor colorWithWhite:0.9 alpha:1.0] : nil;
+    
 
-        NSLog(@"%@", card.contents);
+        //NSLog(@"%@", card.contents);
     }
     
     
