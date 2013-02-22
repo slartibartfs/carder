@@ -41,8 +41,8 @@
 
 {
     NSDictionary *cardSymbols = @{@1: @"●", @2: @"▲", @3: @"■"};
-    NSDictionary *cardColors = @{@1:[UIColor greenColor], @2:[UIColor blueColor], @3:[UIColor redColor]};
-    NSDictionary *cardShadings = @{@1:@1.0, @2:@0.6, @3:@0.3};
+    NSDictionary *cardColors = @{@1:[UIColor orangeColor], @2:[UIColor blueColor], @3:[UIColor redColor]};
+    NSDictionary *cardShadings = @{@1:@1.0, @2:@0.6, @3:@0.2};
 
     NSMutableString *result = [[NSMutableString alloc] init];
     for (int i=1; i<=cardNumber;i++)
@@ -79,7 +79,7 @@
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         
-        cardButton.alpha = card.isUnplayable ? 0.1 : 1.0;
+        cardButton.alpha = card.isUnplayable ? 0.0 : 1.0;
         cardButton.backgroundColor = card.isFaceUp ? [UIColor colorWithWhite:0.9 alpha:1.0] : nil;
     
 
@@ -104,6 +104,15 @@
 }
 
 
+- (IBAction)dealButton:(UIButton *)sender {
+    
+    self.gameset = nil;
+    self.gameset.gameMode = 1;
+
+    [self updateUI];
+    
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -117,9 +126,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"viewDidLoad SetGame");
     
 	// Do any additional setup after loading the view.
     
+    self.gameset.gameMode = 1;
     [self updateUI];
     
 }
