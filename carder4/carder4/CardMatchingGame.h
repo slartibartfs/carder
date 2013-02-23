@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) int score;
 @property (nonatomic) int gameMode;
 @property (nonatomic) NSString *resultOfLastFlip;
+@property (strong, nonatomic) NSMutableArray *recentlyPlayedCards;
 
 
 @end

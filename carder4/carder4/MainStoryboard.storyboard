@@ -804,11 +804,42 @@
                                     <action selector="dealButton:" destination="OlZ-uz-d20" eventType="touchUpInside" id="Ygp-b9-b7O"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fIQ-7e-0H8">
+                                <rect key="frame" x="20" y="379" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flips: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4g4-vJ-lDu">
+                                <rect key="frame" x="223" y="379" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="ZPe-MP-EWK">
+                                <rect key="frame" x="20" y="346" width="280" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="12" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93909222146739135" green="0.93909222146739135" blue="0.93909222146739135" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Ayc-yA-XB1"/>
                     <connections>
+                        <outlet property="flipsLabel" destination="4g4-vJ-lDu" id="pnO-g2-RiC"/>
+                        <outlet property="recentlyPlayedCardsLabel" destination="ZPe-MP-EWK" id="m0l-3u-cxI"/>
+                        <outlet property="scoreLabel" destination="fIQ-7e-0H8" id="ZVJ-OH-hKT"/>
                         <outletCollection property="cardButtons" destination="6y5-qc-AqF" id="t4R-m3-o0J"/>
                         <outletCollection property="cardButtons" destination="Dym-1W-zsm" id="3iG-jj-Om4"/>
                         <outletCollection property="cardButtons" destination="Dh0-Lq-9bW" id="5Xx-rE-V06"/>
@@ -859,6 +890,9 @@
             <relationships>
                 <relationship kind="action" name="dealButton:" candidateClass="UIButton"/>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="recentlyPlayedCardsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
         </class>

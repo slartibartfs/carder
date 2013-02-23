@@ -47,7 +47,7 @@
     
     NSLog(@"Score: %d",score);
     
-    if (score==4) return TRUE; else return FALSE;
+    if (score==4) return score; else return FALSE;
     
 }
 

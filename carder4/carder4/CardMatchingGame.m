@@ -36,6 +36,15 @@
     return _otherCards;
 }
 
+-(NSMutableArray *)recentlyPlayedCards
+{
+    if (!_recentlyPlayedCards) {
+        _recentlyPlayedCards = [[NSMutableArray alloc] init];
+        
+    }
+    return _recentlyPlayedCards;
+}
+
 -(id)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck
 {
     self = [super init];
@@ -71,6 +80,9 @@
     if (!card.isUnplayable) {
         if (!card.isFaceUp) {
             self.score -= FLIP_COST;
+            [self.recentlyPlayedCards addObject:card];
+            if ([self.recentlyPlayedCards count]>3) [self.recentlyPlayedCards removeObjectAtIndex:0];
+            
             self.resultOfLastFlip = [NSString stringWithFormat:@"%@ flipped @ cost of %d", card.contents, FLIP_COST];
             for (Card *otherCard in self.cards) {
                 if (otherCard.isFaceUp && !otherCard.isUnplayable) {
@@ -86,7 +98,6 @@
                 NSLog(@"matchscore: %d",matchScore);
                 if (matchScore)
                 {
-                    NSLog(@"scored");
                     card.unplayable=YES;
                     for (Card *sampleCard in self.otherCards)
                     {
@@ -105,9 +116,14 @@
                 }
             }
 
-        }
+        } else [self.recentlyPlayedCards removeLastObject];
         card.faceUp = !card.isFaceUp;
         NSLog(@"------card flipped------- %@",card.contents);
+        NSLog(@"recently played (%d): ",self.recentlyPlayedCards.count);
+        
+        for (Card *rcard in self.recentlyPlayedCards) NSLog(@" %@ ",rcard.contents);
+        
+        
     }
 }
 
