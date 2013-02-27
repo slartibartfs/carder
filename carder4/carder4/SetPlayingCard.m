@@ -22,30 +22,26 @@
     if (([self.cardSymbol isEqualToNumber: [otherCards[0] cardSymbol]] && [self.cardSymbol isEqualToNumber:[otherCards[1] cardSymbol]] && [[otherCards[0] cardSymbol] isEqualToNumber:[otherCards[1] cardSymbol]]) ||
         (!([self.cardSymbol isEqualToNumber: [otherCards[0] cardSymbol]]) && !([self.cardSymbol isEqualToNumber:[otherCards[1] cardSymbol]]) && !([[otherCards[0] cardSymbol] isEqualToNumber:[otherCards[1] cardSymbol]]))) {
         score++;
-        NSLog(@"Symbol true");
-    } else NSLog(@"Symbol false");
+        
+    } 
     
     if (([self.cardColor isEqualToNumber: [otherCards[0] cardColor]] && [self.cardColor isEqualToNumber:[otherCards[1] cardColor]] && [[otherCards[0] cardColor] isEqualToNumber:[otherCards[1] cardColor]]) ||
         (!([self.cardColor isEqualToNumber: [otherCards[0] cardColor]]) && !([self.cardColor isEqualToNumber:[otherCards[1] cardColor]]) && !([[otherCards[0] cardColor] isEqualToNumber:[otherCards[1] cardColor]]))) {
         score++;
-        NSLog(@"Color true");
-    } else NSLog(@"Color false");
+       
+    } 
     
     if (([self.cardShading isEqualToNumber: [otherCards[0] cardShading]] && [self.cardShading isEqualToNumber:[otherCards[1] cardShading]] && [[otherCards[0] cardShading] isEqualToNumber:[otherCards[1] cardShading]]) ||
         (!([self.cardShading isEqualToNumber: [otherCards[0] cardShading]]) && !([self.cardShading isEqualToNumber:[otherCards[1] cardShading]]) && !([[otherCards[0] cardShading] isEqualToNumber:[otherCards[1] cardShading]]))) {
         score++;
-        NSLog(@"Shading true");
-    } else NSLog(@"Shading false");
+       
+    } 
     
     if ((self.cardNumber == [otherCards[0] cardNumber] && self.cardNumber == [otherCards[1] cardNumber] && [otherCards[0] cardNumber] == [otherCards[1] cardNumber]) ||
         (!(self.cardNumber == [otherCards[0] cardNumber]) && !(self.cardNumber == [otherCards[1] cardNumber]) && !([otherCards[0] cardNumber] == [otherCards[1] cardNumber])))  {
         
         score++;
-        NSLog(@"Number true");
-    } else NSLog(@"Number false");
-
-    
-    NSLog(@"Score: %d",score);
+    } 
     
     if (score==4) return score; else return FALSE;
     

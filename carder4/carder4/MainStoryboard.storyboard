@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Card Game View Controller - Item-->
+        <!--Card Game View Controller - Match-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="CardGameViewController" sceneMemberID="viewController">
@@ -302,7 +302,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="RV7-pa-Esd"/>
+                    <tabBarItem key="tabBarItem" title="Match" id="RV7-pa-Esd"/>
                     <connections>
                         <outlet property="flipsLabel" destination="Qis-ej-mlp" id="fUH-0S-8WS"/>
                         <outlet property="gameModeSwitch" destination="xsH-91-fWY" id="WA3-fj-Rad"/>
@@ -343,13 +343,14 @@
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="9Sd-rd-VL6"/>
                         <segue destination="OlZ-uz-d20" kind="relationship" relationship="viewControllers" id="l4g-BG-xpK"/>
+                        <segue destination="1L0-Ct-Vx2" kind="relationship" relationship="viewControllers" id="7YC-Z9-q1f"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBE-yC-iZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="204" y="-165"/>
         </scene>
-        <!--Set Card Game View Controller - Item-->
+        <!--Set Card Game View Controller - Set-->
         <scene sceneID="igb-Ev-u4k">
             <objects>
                 <viewController id="OlZ-uz-d20" customClass="SetCardGameViewController" sceneMemberID="viewController">
@@ -835,7 +836,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93909222146739135" green="0.93909222146739135" blue="0.93909222146739135" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Ayc-yA-XB1"/>
+                    <tabBarItem key="tabBarItem" title="Set" id="Ayc-yA-XB1"/>
                     <connections>
                         <outlet property="flipsLabel" destination="4g4-vJ-lDu" id="pnO-g2-RiC"/>
                         <outlet property="recentlyPlayedCardsLabel" destination="ZPe-MP-EWK" id="m0l-3u-cxI"/>
@@ -869,6 +870,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8A-wN-yHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="710" y="218"/>
+        </scene>
+        <!--View Controller - Scores-->
+        <scene sceneID="VAf-Aa-rpI">
+            <objects>
+                <viewController id="1L0-Ct-Vx2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hZW-mL-iUb">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Scores" id="Ofh-Zc-NGb"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUV-Ia-7hd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="779"/>
         </scene>
     </scenes>
     <classes>

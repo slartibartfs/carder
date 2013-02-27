@@ -25,11 +25,7 @@
                         card.cardShading = cardShading;
                         card.cardNumber = cardNumber;
                         [self addCard:card atTop:YES];
-                        NSLog(@"created: %@-%@-%@-%d",card.cardColor,card.cardSymbol,card.cardShading,card.cardNumber);
-                        
-                        
-                        
-
+                            //NSLog(@"created: %@-%@-%@-%d",card.cardColor,card.cardSymbol,card.cardShading,card.cardNumber);
                         
                     }
                 }

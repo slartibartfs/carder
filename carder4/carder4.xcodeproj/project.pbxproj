@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F1B372816D977F3006A55A1 /* GameResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B372716D977F3006A55A1 /* GameResults.m */; };
 		9F256A6516D6B10100600E27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F256A6416D6B10100600E27 /* UIKit.framework */; };
 		9F256A6716D6B10100600E27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F256A6616D6B10100600E27 /* Foundation.framework */; };
 		9F256A6916D6B10100600E27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F256A6816D6B10100600E27 /* CoreGraphics.framework */; };
@@ -64,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F1B372616D977F3006A55A1 /* GameResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResults.h; sourceTree = "<group>"; };
+		9F1B372716D977F3006A55A1 /* GameResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResults.m; sourceTree = "<group>"; };
 		9F256A6116D6B10100600E27 /* carder4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carder4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F256A6416D6B10100600E27 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9F256A6616D6B10100600E27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -238,6 +241,8 @@
 				9F256ABC16D6B26200600E27 /* PlayingCardDeck.m */,
 				9F256ABD16D6B26200600E27 /* SetCardGameDeck.h */,
 				9F256ABE16D6B26200600E27 /* SetCardGameDeck.m */,
+				9F1B372616D977F3006A55A1 /* GameResults.h */,
+				9F1B372716D977F3006A55A1 /* GameResults.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				9F256AC916D6B26200600E27 /* Deck.m in Sources */,
 				9F256ACB16D6B26200600E27 /* PlayingCardDeck.m in Sources */,
 				9F256ACD16D6B26200600E27 /* SetCardGameDeck.m in Sources */,
+				9F1B372816D977F3006A55A1 /* GameResults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
