@@ -10,7 +10,7 @@
 #import "PlayingCardDeck.h"
 #import "PlayingCard.h"
 #import "CardMatchingGame.h"
-
+#import "GameResults.h"
 @interface CardGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
@@ -20,10 +20,22 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultOfLastFlipLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSwitch;
+@property (strong, nonatomic) GameResults *gameResults;
+
 
 @end
 
 @implementation CardGameViewController
+
+-(GameResults *)gameResults
+{
+    if (!_gameResults) {
+        _gameResults=[[GameResults alloc] init];
+    }
+    return _gameResults;
+    
+        
+}
 
 - (IBAction)gameModeSwitch:(UISegmentedControl *)sender {
     
@@ -43,6 +55,7 @@
     self.game = nil;
     self.flipCount = 0;
     self.gameModeSwitch.enabled=YES;
+    self.gameResults = nil;
 
     [self updateUI];
 }
@@ -105,6 +118,7 @@
     self.gameModeSwitch.enabled=NO;
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
+    self.gameResults.score = self.game.score;
     [self updateUI];
     
 }

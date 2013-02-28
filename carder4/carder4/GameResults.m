@@ -29,16 +29,27 @@
     }
 }
 
-/* unfinished typing
+#define START_KEY @"StartDate"
+#define END_KEY @"EndDate"
+#define SCORE_KEY @"Score"
+
     //convenience initializer
 -(id)initFromPropertyList:(id)plist
 {
     self = [self init];
     if (self) {
+        if ([plist isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *resultDictionary = (NSDictionary *) plist;
+            _start = resultDictionary[START_KEY];
+            _end = resultDictionary[END_KEY];
+            _score = [resultDictionary[SCORE_KEY] intValue];
+            if (!_start || !_end) self = nil;
+        }
     }
+    return self;
 }
 
- */
+ 
 - (void)synchronize
 {
     NSMutableDictionary *mutableGameResultsFromUserDefaults =[[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] mutableCopy];
@@ -50,9 +61,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-#define START_KEY @"StartDate"
-#define END_KEY @"EndDate"
-#define SCORE_KEY @"Score"
+
 
 -(id)asPropertyList
 {

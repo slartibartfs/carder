@@ -52,6 +52,7 @@
 		9F256AD516D6B27900600E27 /* cardgameicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F256AD016D6B27900600E27 /* cardgameicon.png */; };
 		9F256AD616D6B27900600E27 /* cardback.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F256AD116D6B27900600E27 /* cardback.png */; };
 		9F256AD716D6B27900600E27 /* cardback.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F256AD116D6B27900600E27 /* cardback.png */; };
+		B2F6770316DFF3C900307ACF /* GameResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F6770216DFF3C900307ACF /* GameResultsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,8 @@
 		9F256ACF16D6B27900600E27 /* setgameicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setgameicon.png; sourceTree = "<group>"; };
 		9F256AD016D6B27900600E27 /* cardgameicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardgameicon.png; sourceTree = "<group>"; };
 		9F256AD116D6B27900600E27 /* cardback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardback.png; sourceTree = "<group>"; };
+		B2F6770116DFF3C900307ACF /* GameResultsViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = GameResultsViewController.h; path = ../GameResultsViewController.h; sourceTree = "<group>"; };
+		B2F6770216DFF3C900307ACF /* GameResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameResultsViewController.m; path = ../GameResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,13 +175,15 @@
 			isa = PBXGroup;
 			children = (
 				9F256AAE16D6B25100600E27 /* Model */,
+				9F256AA116D6B22E00600E27 /* MainStoryboard.storyboard */,
 				9F256A9F16D6B22E00600E27 /* carderAppDelegate.h */,
 				9F256AA016D6B22E00600E27 /* carderAppDelegate.m */,
-				9F256AA116D6B22E00600E27 /* MainStoryboard.storyboard */,
 				9F256AA216D6B22E00600E27 /* CardGameViewController.h */,
 				9F256AA316D6B22E00600E27 /* CardGameViewController.m */,
 				9F256AA416D6B22E00600E27 /* SetCardGameViewController.h */,
 				9F256AA516D6B22E00600E27 /* SetCardGameViewController.m */,
+				B2F6770116DFF3C900307ACF /* GameResultsViewController.h */,
+				B2F6770216DFF3C900307ACF /* GameResultsViewController.m */,
 				9F256A7316D6B10100600E27 /* AppDelegate.h */,
 				9F256A7416D6B10100600E27 /* AppDelegate.m */,
 				9F256A6B16D6B10100600E27 /* Supporting Files */,
@@ -378,6 +383,7 @@
 				9F256ACB16D6B26200600E27 /* PlayingCardDeck.m in Sources */,
 				9F256ACD16D6B26200600E27 /* SetCardGameDeck.m in Sources */,
 				9F1B372816D977F3006A55A1 /* GameResults.m in Sources */,
+				B2F6770316DFF3C900307ACF /* GameResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
