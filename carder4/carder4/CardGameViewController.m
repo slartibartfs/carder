@@ -11,6 +11,7 @@
 #import "PlayingCard.h"
 #import "CardMatchingGame.h"
 #import "GameResults.h"
+
 @interface CardGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
@@ -19,7 +20,6 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultOfLastFlipLabel;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSwitch;
 @property (strong, nonatomic) GameResults *gameResults;
 
 
@@ -37,24 +37,12 @@
         
 }
 
-- (IBAction)gameModeSwitch:(UISegmentedControl *)sender {
-    
-    if (sender.selectedSegmentIndex == 0) {
-        self.game.gameMode = 0;
-    } else {
-        self.game.gameMode = 1;
-        
-    }
-    NSLog(@"SelectedSegment: %d",sender.selectedSegmentIndex);
-    NSLog(@"Gamemode is %d", self.game.gameMode);
-}
 
 
 - (IBAction)dealButton:(id)sender {
     
     self.game = nil;
     self.flipCount = 0;
-    self.gameModeSwitch.enabled=YES;
     self.gameResults = nil;
 
     [self updateUI];
@@ -100,8 +88,8 @@
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     self.resultOfLastFlipLabel.text = [NSString stringWithFormat:@"%@", self.game.resultOfLastFlip];
-    self.gameModeSwitch.selectedSegmentIndex = self.game.gameMode;
-    
+    if (self.game.gameOver)  self.resultOfLastFlipLabel.text = [NSString stringWithFormat:@"Game Over!"];
+                                                                   
     
 }
 
@@ -115,7 +103,6 @@
 - (IBAction)flipCard:(UIButton *)sender
 {
     
-    self.gameModeSwitch.enabled=NO;
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     self.gameResults.score = self.game.score;

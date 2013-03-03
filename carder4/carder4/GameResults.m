@@ -18,6 +18,9 @@
 @implementation GameResults
 
 #define ALL_RESULTS_KEY @"GameResult_All"
+#define START_KEY @"StartDate"
+#define END_KEY @"EndDate"
+#define SCORE_KEY @"Score"
 
 + (NSArray *) allGameResults
 {
@@ -27,11 +30,10 @@
         GameResults *result = [[GameResults alloc] initFromPropertyList:plist];
         [allGameResults addObject:result];
     }
+    return allGameResults;
 }
 
-#define START_KEY @"StartDate"
-#define END_KEY @"EndDate"
-#define SCORE_KEY @"Score"
+
 
     //convenience initializer
 -(id)initFromPropertyList:(id)plist
@@ -49,7 +51,7 @@
     return self;
 }
 
- 
+
 - (void)synchronize
 {
     NSMutableDictionary *mutableGameResultsFromUserDefaults =[[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] mutableCopy];
@@ -65,7 +67,7 @@
 
 -(id)asPropertyList
 {
-    return @{START_KEY:self.start,END_KEY:self.end,SCORE_KEY:@{self.score}};
+    return @{START_KEY:self.start,END_KEY:self.end,SCORE_KEY:@(self.score)};
     
 }
 

@@ -18,6 +18,32 @@
 
 @implementation CardMatchingGame
 
+-(BOOL)checkForGameOver
+{
+    BOOL gameOver=TRUE;
+    
+    for (int i=0; i<[self.cards count]; i++) {
+        for (int k=0;k<[self.cards count];k++) {
+            if (i!=k){
+                            
+                Card *card1 = [self cardAtIndex:i];
+                Card *card2= [self cardAtIndex:k];
+                if (!card1.isUnplayable && !card2.isUnplayable)
+                {
+                    int matchScore = [card1 match:@[card2]];
+                    
+                    if (matchScore) {
+                        gameOver=FALSE;
+                        break;
+                    }
+                }
+            }
+        }
+        if (!gameOver) break;
+    }
+    return gameOver;
+}
+
 -(NSMutableArray *)cards
 {
     if (!_cards) {
@@ -118,12 +144,20 @@
 
         } else [self.recentlyPlayedCards removeLastObject];
         card.faceUp = !card.isFaceUp;
-        NSLog(@"------card flipped------- %@",card.contents);
+        //NSLog(@"------card flipped------- %@",card.contents);
         NSLog(@"recently played (%d): ",self.recentlyPlayedCards.count);
         
         for (Card *rcard in self.recentlyPlayedCards) NSLog(@" %@ ",rcard.contents);
         
-        
+        self.gameOver=[self checkForGameOver];
+        if (self.gameOver) {
+            for (int i=0; i<[self.cards count]; i++) {
+                Card *thiscard = [self cardAtIndex:index];
+                thiscard.unplayable=TRUE;
+                thiscard.FaceUp=TRUE;
+            }
+            NSLog(@"Game Over");
+        }
     }
 }
 

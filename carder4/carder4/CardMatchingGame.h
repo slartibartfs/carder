@@ -16,9 +16,11 @@
 
 -(void)flipCardAtIndex:(NSUInteger)index;
 -(Card *)cardAtIndex:(NSUInteger)index;
+    
 
 @property (nonatomic, readonly) int score;
 @property (nonatomic) int gameMode;
+@property (nonatomic) BOOL gameOver;    
 @property (nonatomic) NSString *resultOfLastFlip;
 @property (strong, nonatomic) NSMutableArray *recentlyPlayedCards;
 
